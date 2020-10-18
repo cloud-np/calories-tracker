@@ -1,0 +1,202 @@
+.Recipe-container {
+    /* display: grid;
+    place-items: center; */
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.Recipe {
+    z-index: 1;
+    -webkit-box-shadow: 3px 4px 11px 2px rgba(0,0,0,0.47); 
+    box-shadow: 3px 4px 11px 2px rgba(6, 21, 24, 0.47);
+}
+
+/* 
+    <div className={`Recipe__stats ${showStats ? 'reveal-stats' : ''}`}>
+        <p>Hello thereeee</p>
+        <p>Hello thereeee</p>
+        <p>Hello thereeee</p>
+        <p>Hello thereeee</p>
+        <p>Hello thereeee</p>
+    </div> 
+.Recipe__stats {
+    opacity: 0;
+    background: linear-gradient(50deg, rgba(161,72,93,.7) 0%, rgba(89,137,239,.5) 100%);
+    position: absolute;
+    z-index: 2;
+	transform: translate(0px, 70px);
+    transition: 500ms;
+}
+
+.reveal-stats {
+    width: 100%;
+    opacity: 1;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+	transform: translate(0px, 0px);
+    left: 0px;
+    display: block;
+} */
+
+.info-popover{
+    background-color:  var(--darker-color);
+}
+
+.info-popover strong{
+    font-weight: 400;
+    color: white;
+}
+
+.info-popover span{
+    color: var(--light-color);
+}
+
+
+/* .info-popover {
+    background-color: purple;
+} */
+
+.popover-header, .popover-body{
+    color: white;
+    background-color:  var(--darker-color);
+    border-radius: 2px;
+    border-color:  #198b6f;
+}
+
+.Recipe__middle {
+    margin-top: -75px;
+    display: flex;
+}
+
+.Recipe__title-container {
+    color: white;
+    margin-bottom: 0;
+    margin-left: 20px;
+    border-bottom-right-radius: 5px;
+    max-width: 25rem;
+    flex: 1;
+}
+
+.Recipe__toolbar {
+    margin: 9px;
+    display: flex;
+    float: right;
+    color: white;
+}
+
+.Recipe__toolbar > svg {
+    margin: 0 6px;
+    transition: .2s;
+}
+
+.Recipe__toolbar > svg:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.Recipe__info {
+    color: white;
+    margin: 20px;
+    position: absolute;
+}
+
+.Recipe__favorite {
+    /* flex: 0 1 40px; */
+    /* position: absolute; */
+    margin-right: 10px;
+    flex-grow: 0;
+    line-height: 4;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    display: absolute;
+    color: rgb(112, 112, 112);
+    transition: .2s;
+    
+}
+
+.Recipe__favorite.active {
+    color: tomato;
+}
+
+.Recipe__favorite:hover {
+    translate: rotate(180deg);
+    cursor: pointer;
+    color: tomato;
+}
+
+
+.Recipe__subtitle {
+    font-size: 1.08rem;
+    margin-bottom: .1rem;
+    color: rgb(233, 233, 233);
+}
+
+.Recipe__title {
+    display: flex;
+    font-size: 1.6rem;
+}
+
+.Recipe__title > i{
+    font-size: .9rem;
+    margin-left: 10px;
+    margin-top: 8px;
+    color: rgb(233, 233, 233);
+}
+
+.Recipe {
+    border-radius: 5px;
+    background-color: #151e22;
+    margin: 1rem;
+}
+
+.Recipe {
+    width: 27.5rem;
+    height: 25rem;
+}
+
+/* 
+background: -webkit-linear-gradient(bottom left, rgba(161, 72, 93, 1.0), rgba(89, 137, 239, 1.0));
+background: -moz-linear-gradient(bottom left, rgba(161, 72, 93, 1.0), rgba(89, 137, 239, 1.0));
+background: linear-gradient(50deg, rgba(161,72,93,1) 0%, rgba(161,72,93,1) 60%, rgba(89,137,239,1) 100%);
+background: linear-gradient(50deg, rgba(255,195,65,1) 0%, rgba(255,151,4,1) 100%);
+
+*/
+
+.Recipe__img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 70%; 
+}  
+
+.Recipe__footer {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+/* @media only screen and (max-width: 600px) {
+    
+    .Recipe {
+        width: 29.5rem;
+        height: 25rem;
+    }
+
+    .Recipe__img {
+        background-size: 100%;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .Recipe {
+        width: 29.5rem;
+        height: 25rem;
+    }
+} */

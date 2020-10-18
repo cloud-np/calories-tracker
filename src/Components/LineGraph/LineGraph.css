@@ -1,0 +1,31 @@
+.LineGraph {
+    width: 600px;
+    display: inline-block;
+    /* background-color: #364147;
+    padding: 10px;
+    border-radius: 1%; */
+    color: whitesmoke;
+    margin: 10%;
+}
+
+/* --light-color: #1DE9B6;
+--dark-color: #263238; */
+.toolbar button{
+    border: 1px solid  #263238;
+    border-radius: 3px;
+    color: white;
+    background-color: #263238;
+    font-size: .8em;
+    padding: .2em .7em;
+    margin-bottom: .5em;
+    transition: border .5s;
+}
+
+.toolbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.toolbar button:hover{
+    border: 1px solid  #1DE9B6;
+}

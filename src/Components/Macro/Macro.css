@@ -1,0 +1,31 @@
+
+.Macro-perc {
+    display: flex;
+    margin: 0 10px;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+
+.Macro-perc > h6.grams {
+    font-size: 1.2rem;
+    color: rgb(214, 214, 214);
+}
+
+.Macro-simple svg {
+    width: 25px;
+    height: 25px;
+    fill: white;
+}
+
+.Macro-simple > .grams > span {
+    margin: 0 .4rem;
+}
+
+.Macro-simple__protein > svg {
+    width: 23px;
+    height: 23px;
+}

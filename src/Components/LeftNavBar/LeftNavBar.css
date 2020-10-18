@@ -1,0 +1,153 @@
+.LeftNavBar {
+    position: fixed;
+    background-color: #182125;
+    transition: width 600ms ease;
+    overflow: hidden;
+    z-index: 100;
+}
+
+
+.LeftNavBar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    background-color: #11171a;
+}
+
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.logo {
+    background-color: #11171a;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.my-nav-link {
+    filter: grayscale(100%) opacity(.7);
+    align-items: center;
+    height: 5rem;
+    justify-content: center;
+    transition: 600ms;
+}
+
+.nav-item:hover .my-nav-link{
+    filter: grayscale(0%) opacity(1);
+    color: var(--light-color);
+}
+/* react-icons are compilied as svgs */
+.my-nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.link-text {
+    filter: grayscale(100%) opacity(.5);
+    color: white;
+    opacity: 0;
+    margin-top: 3px;
+    display: inline-block;
+    position: absolute;
+    transition: 500ms;
+}
+
+.nav-item:hover .link-text {
+    filter: grayscale(0%) opacity(1);
+    color: white;
+}
+
+
+.logo-text{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+  position: absolute;
+  left: -999px;
+  transition: 500ms;
+}
+
+
+.LeftNavBar:hover .link-text {
+    opacity: 1;
+}
+
+
+@keyframes shining {
+
+  from {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.3);
+  }
+
+  to {
+    filter: brightness(1);
+  }
+}
+
+
+@media only screen and (min-width: 600px) {
+    .LeftNavBar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .LeftNavBar:hover {
+        width: 15rem;
+    }
+    
+    .LeftNavBar:hover .shine {
+        animation: shining 2s infinite;
+    }
+    
+    .LeftNavBar:hover .logo-text{
+        left: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .LeftNavBar {
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .logo, .link-text {
+        display: none;
+    }
+
+    .LeftNavBar-nav {
+        flex-direction: row;
+        overflow: scroll;
+    }
+
+    .my-nav-link {
+        justify-content: center;
+    }
+
+}

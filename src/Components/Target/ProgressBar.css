@@ -1,0 +1,29 @@
+.ProgressBar {
+    z-index: 1;
+    position: relative;
+    height: 6px;
+    border-radius: 5px;
+    display: flex;
+    background-color: teal;
+}
+
+.ProgressBar-bg {
+    top: -6px;
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    display: flex;
+    background-color: rgba(51, 51, 51, 0.781);
+}
+
+.ProgressBar-Container {
+    display: block;
+    margin-top: 3em;
+}
+
+
+.ProgressBar-Container > .percentage {
+    margin-top: .55em;
+    font-size: .7em;
+}

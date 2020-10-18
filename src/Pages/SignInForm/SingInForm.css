@@ -1,0 +1,23 @@
+.SignUpForm button:hover {
+  background-color: #47f7cb;
+}
+
+.form-width {
+  width: 35%;
+  min-width: 260px;
+}
+
+@media screen and (max-width: 600px) {
+  .SignUpForm {
+    max-width: 100px;
+  }
+}
+
+.SignUpForm button {
+  background-color: #1de9b6;
+  /* font-style: none; */
+  border: none;
+  padding: 0.4em;
+  color: white;
+  border-radius: 3px;
+}
