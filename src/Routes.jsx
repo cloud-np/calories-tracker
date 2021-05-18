@@ -8,6 +8,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import RecipesList from './Components/RecipesList/RecipesList';
 import Recipe from './Components/Recipe/Recipe';
 import LineGraph from './Components/LineGraph/LineGraph';
+import LogDay from './Pages/LogDayForm/LogDayForm';
 
 const Routes = () => {
 
@@ -39,6 +40,7 @@ const Routes = () => {
 
                     <Route exact path="/recipes">
                         <LeftNavBar />
+                        <h1 className="Recipies__title">All the Recipies</h1>
                         <RecipesList />
                     </Route>
 
@@ -49,6 +51,7 @@ const Routes = () => {
                     <Route exact path="/log-day">
                         <LeftNavBar />
                         <h1>Log day</h1>
+                        <LogDay />
                     </Route>
 
                     <Route exact path="/add-recipe">

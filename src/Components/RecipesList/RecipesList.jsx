@@ -1,7 +1,8 @@
 import React from 'react';
 import './RecipesList.css';
 import french from '../../img/french-toast.jpg';
-import {Macro} from '../Macro/Macro';
+import { Macro } from '../Macro/Macro';
+import { useHistory } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 
 const recipes = [
@@ -14,7 +15,8 @@ const recipes = [
         },
         imgSrc: french,
         createdAt: "10/09/2020",
-        author: "Cloud Anarchy"
+        author: "Cloud Anarchy",
+        id: 15
     },
     {
         title: 'French Toast',
@@ -25,7 +27,8 @@ const recipes = [
         },
         imgSrc: french,
         createdAt: "10/09/2020",
-        author: "Cloud Anarchy"
+        author: "Cloud Anarchy",
+        id: 16
     },
     {
         title: 'French Toast',
@@ -36,7 +39,8 @@ const recipes = [
         },
         imgSrc: french,
         createdAt: "10/09/2020",
-        author: "Cloud Anarchy"
+        author: "Cloud Anarchy",
+        id: 15
     },
     {
         title: 'French Toast',
@@ -47,7 +51,8 @@ const recipes = [
         },
         imgSrc: french,
         createdAt: "10/09/2020",
-        author: "Cloud Anarchy"
+        author: "Cloud Anarchy",
+        id: 15
     },
     {
         title: 'French Toast',
@@ -58,23 +63,30 @@ const recipes = [
         },
         imgSrc: french,
         createdAt: "10/09/2020",
-        author: "Cloud Anarchy"
+        author: "Cloud Anarchy",
+        id: 15
     }
 ]
 const dark_red = 'rgba(161,72,93, 1) 0%, rgba(161,72,93, .5) 32%';
 const light_blue = 'rgba(89,137,239, .4) 100%';
 
 function RecipesList() {
+    const history = useHistory();
 
     const imgStyles = {
         background: `linear-gradient(50deg, ${dark_red}, ${light_blue}), url(${french}) no-repeat top`,
         backgroundSize: 'cover'
     }
 
+    const handleShowRecipe = id => () => {
+        console.log(id)
+        history.push(`recipes/${id}`)
+    }
+
     return (
         <ul className="RecipesList">
             {recipes.map((recipe, index) => (
-                <li key={index} className="RecipesList__recipe" onClick={() => console.log('ehllo')}>
+                <li key={index} className="RecipesList__recipe" onClick={handleShowRecipe(recipe.id)}>
                     <div style={imgStyles} className="RecipesList__recipe__img"></div>
                     <div className="RecipesList__recipe__info">
                         <h4>

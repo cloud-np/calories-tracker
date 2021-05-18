@@ -6,8 +6,9 @@ import french from '../../img/french-toast.jpg';
 import { MdSettings } from 'react-icons/md'; 
 import { GoHeart } from 'react-icons/go';
 import { BiInfoCircle } from 'react-icons/bi';
+import { macros_colors } from '../../helpers/macro_colors';
 import { Macro } from '../Macro/Macro';
-import { calcCalories, calcMacrosPercentages } from './helper';
+import { calcCalories, calcMacrosPercentages } from '../../helpers/calories_calc';
 
 const dark_red = 'rgba(161,72,93, 1) 0%, rgba(161,72,93, .5) 32%';
 const light_blue = 'rgba(89,137,239, .4) 100%';
@@ -50,15 +51,16 @@ function Recipe({
         </Popover>
     );
     const perc = calcMacrosPercentages(macros);
-    const colors = ['#64efdf', '#7b64ef', '#f76e59'];
     return (
         <div className="Recipe-container">
             <div className="Recipe">
                 <div className="Recipe__toolbar">
                     <MdSettings />
+                    {/* TODO: This has findDOMNode fix it when you can */}
                     <OverlayTrigger trigger="click" placement="left" overlay={popover}>
                         <BiInfoCircle/>
                     </OverlayTrigger>
+                    {/* ///////////////////////////////////////////////*/}
                 </div>
                 <div className="Recipe__img" style={imgStyles} >
                 </div>
@@ -79,21 +81,21 @@ function Recipe({
                         name="Protein" 
                         perc={perc.protein} 
                         grams={macros.protein} 
-                        color={colors[0]}
+                        color={macros_colors[0]}
                         type='perc'
                     />
                     <Macro 
                         name="Carbs" 
                         perc={perc.carbs} 
                         grams={macros.carbs} 
-                        color={colors[1]}
+                        color={macros_colors[1]}
                         type='perc'
                     />
                     <Macro 
                         name="Fats" 
                         perc={perc.fats} 
                         grams={macros.fats} 
-                        color={colors[2]}
+                        color={macros_colors[2]}
                         type='perc'
                     />
                 </div>

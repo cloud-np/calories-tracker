@@ -1,0 +1,1 @@
+export const macros_colors = ['#64efdf', '#7b64ef', '#f76e59'];

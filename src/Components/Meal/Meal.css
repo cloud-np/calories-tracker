@@ -1,0 +1,24 @@
+
+.Meal { 
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--darker-color);
+    border-radius: 3px;
+    padding: 1em;
+    margin: 1em;
+    transition: transform 300ms ease;
+}
+
+.Meal:hover{
+    transform: scale(1.05);
+}
+
+.Meal__name {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.Meal__macros {
+    display: flex;
+}

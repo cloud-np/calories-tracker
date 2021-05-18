@@ -1,4 +1,3 @@
-
 export const calcCalories = (macros) => {
     return macros.protein * 4 + macros.carbs * 4 + macros.fats * 9;
 }
@@ -10,4 +9,3 @@ export const calcMacrosPercentages = (macros) => {
     const fats =  Math.floor(macros.fats * 9 / calories * 100);
     return { protein, carbs, fats }
 }
-
