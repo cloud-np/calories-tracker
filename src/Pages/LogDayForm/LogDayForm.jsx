@@ -9,7 +9,7 @@ import { Badge, Form, Container, Col, Row, Button } from 'react-bootstrap';
 import MealLog from '../../Components/MealLog/MealLog';
 import Meal from '../../Components/Meal/Meal';
 
-function RecipesList() {
+function LogDayForm() {
     // In case we need to redirect the user somewhere
     // const routerHistory = useHistory();  
     // const handleSubmit = async event => {
@@ -44,8 +44,9 @@ function RecipesList() {
         console.log(meal);
         setMeals([...meals, meal]);
         setIsMealLogActive(false);
-    }; 
-    const handleMealLog = (event) => {
+    } 
+
+    const handleMealLog = () => {
         setIsMealLogActive(!isMealLogActive);
     }
 
@@ -67,11 +68,14 @@ function RecipesList() {
                 <Form className="mt-3 form-width" onSubmit={handleSubmit}>
                     <Form.Row className="mt-2">
                         {/* <Form.Label className="text-white">Steps</Form.Label> */}
-                        <Form.Group as={Col} controlId="formGym">
+
+                        <Form.Group as={Col} controlId="formWeight">
+                            <Form.Control onChange={handleChange} type="number" placeholder="Weight" name="weight" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="formSteps">
                             <Form.Control onChange={handleChange} type="number" placeholder="Steps" name="steps" />
                         </Form.Group>
                     </Form.Row>
-
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGym">
                             <Form.Check className="text-white" type="checkbox" label="Did you train today?" name="didGym"/>
@@ -94,7 +98,7 @@ function RecipesList() {
                             // return <MealLog key={uuidv4()} {...meal}/>
                         })
                     }
-                    <Form.Row>
+                    <Form.Row className="mt-5">
                         <Form.Group as={Col} controlId="formAddMeal">
                             <FcPlus className="plus-icon" onClick={handleMealLog} />
                             <Form.Text className="text-muted">
@@ -118,4 +122,4 @@ function RecipesList() {
     );
 }
 
-export default RecipesList;
+export default LogDayForm;
