@@ -1,24 +1,36 @@
 
 .Meal { 
-    display: flex;
+    display: block;
     justify-content: center;
-
     background-color: var(--darker-color);
     border-radius: 3px;
-    padding: 1em;
+    padding: .8em;
     margin: 1em;
-    transition: transform 300ms ease;
+    /* transition: transform 200ms ease; */
 }
 
-.Meal:hover{
-    transform: scale(1.05);
+.Meal__toolbar {
+    display: flex;
+    justify-content: flex-end;
 }
+
+.Meal__toolbar__edit_icon{
+    margin-left: .7em;
+    cursor: pointer;
+    margin-bottom: .8em;
+}
+
+/* .Meal:hover{
+    transform: scale(1.02);
+} */
 
 .Meal__name {
     margin-top: 2em;
     margin-bottom: 2em;
 }
 
-.Meal__macros {
+.Meal__main {
     display: flex;
+    justify-content: space-between;
+    margin: 0 .9em;
 }

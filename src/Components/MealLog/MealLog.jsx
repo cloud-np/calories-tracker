@@ -15,7 +15,7 @@ function MealLog(props){
     }
     return (
 
-        <>
+        <div>
             <Form.Row>
                 <Form.Group as={Col} controlId="formMealName">
                     <Form.Control onChange={handleChange} type="text" placeholder="Meal Name" name="mealName" />
@@ -37,7 +37,7 @@ function MealLog(props){
                     Add Meal
                 </Button>
             </Form.Row>
-        </>
+        </div>
     );
 
 }

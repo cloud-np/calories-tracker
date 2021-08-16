@@ -28,7 +28,8 @@ function LogDayForm() {
         steps: 0,
         calories: 0,
         didGym: false,
-    })
+    });
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!formValues['calories']){
@@ -41,8 +42,12 @@ function LogDayForm() {
     //     setValues({...values, meals: [...values.meals, 'ox']})
     // }
     const passMealToLogDay = (meal) => {
-        console.log(meal);
         setMeals([...meals, meal]);
+        const mealCalories = calcCalories(meal);
+        setValues({
+            ...formValues,
+            calories: formValues.calories + mealCalories 
+        });
         setIsMealLogActive(false);
     } 
 
@@ -55,7 +60,6 @@ function LogDayForm() {
             ...formValues,
             [event.target.name]: event.target.value
         });
-        console.log(formValues);
     }
 
     return (
@@ -88,13 +92,12 @@ function LogDayForm() {
                             <h5><span className="text-white">{formValues['calories'] ? formValues['calories'] : 0}</span> <Badge variant="info">Calories</Badge></h5>
                         </Form.Group>
                     </Form.Row>
-
                     {
                         isMealLogActive ? <MealLog passMealToLogDay={passMealToLogDay} /> : ''
                     }
                     {
                         meals.map(meal => {
-                            return <Meal key={uuidv4()} {...meal}/>;
+                            return <Meal key={uuidv4()} {...meal} />;
                             // return <MealLog key={uuidv4()} {...meal}/>
                         })
                     }
@@ -107,7 +110,7 @@ function LogDayForm() {
                         </Form.Group>
                     </Form.Row>
                     <Button variant="secondary" type="submit"> 
-                        Sumbit
+                        Submit
                     </Button>
                     {/* <button type="submit" className="w-100 submit-btn">
                         Submit!

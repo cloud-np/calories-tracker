@@ -1,6 +1,5 @@
 import React from 'react';
 import './Macro.css';
-import { GiMuscleUp } from 'react-icons/gi'
 //  Note this approach only works with create-react-app, If you are not using create-react-app, I would recommend using other approaches. 
 //  Create-react-app uses SVGR under the hood to make it possible to transform and import SVG as a React component.
 import { ReactComponent as Protein } from '../../img/macros/protein.svg'; 
